@@ -2,13 +2,21 @@ const rect = require("./rectangle");
 
 
 const SOLVE =(l,b)=>{
-    if(l<=0 || b<=0){
-        console.log('error');
-    }
-    else{
-        console.log("hence area is"+rect.area(l,b));
-        console.log("hence perimeter is"+rect.perimeter(l,b));
-    }
+    console.log("Before the function\n");
+
+    rect(l,b, (err, rectangle) =>{
+        if(err){
+            console.log("Error",err.message)
+        }
+        else{
+            console.log("Area is : ",rectangle.area());
+            console.log("Perimeter is : ",rectangle.perimeter())
+        }
+    });
+
+    console.log('\nAfter funciton')
+
+
 };
 
-SOLVE(2,4);
+SOLVE(2,0);
